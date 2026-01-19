@@ -1,14 +1,23 @@
 import requests
 from bs4 import BeautifulSoup
 
-# url = "https://www.britannica.com/topic/Islam" #example
-def fetch_url_soup(url):
+url = "https://www.britannica.com/topic/Islam" #example
+def fetch_url_soup(url) -> BeautifulSoup: #1
     
 
     response = requests.get(url)
     html_string = response.text
-    # print(html_string)
 
     soup = BeautifulSoup(html_string, "html.parser")
     return soup
+
+
+def strip_uneeded_tags(soup) -> None: #
+    uneeded_tags = [
+        "script", "style", "noscript",
+        "header", "footer", "nav", "aside",
+        "form", "button", "input"
+    ]
+    for tag in soup(uneeded_tags):
+        tag.decompose() #changes soup in memory
 
