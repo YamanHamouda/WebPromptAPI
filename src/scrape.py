@@ -21,3 +21,9 @@ def strip_uneeded_tags(soup) -> None: #
     for tag in soup(uneeded_tags):
         tag.decompose() #changes soup in memory
 
+
+def parse_url(url):
+    soup = fetch_url_soup(url) 
+    strip_uneeded_tags(soup) #no return
+
+parse_url(url)
