@@ -29,10 +29,26 @@ def strip_uneeded_tags(soup) -> None: #3
     for tag in soup(uneeded_tags):
         tag.decompose() #changes soup in memory
 
+def extract_text(container):
+    allowed_tags = ["h1", "h2", "h3", "h4", "h5", "h6", "p", "li", "blockquote"]
+    chunks = []
+
+    for tag in container.find_all(allowed_tags):
+        text = tag.get_text(" ", strip=True)
+
+        #Too short => useless => don't use it.
+        if len(text) < 30:
+            continue
+
+        chunks.append(text)
+
+    return "\n".join(chunks)
 
 def parse_url(url):
     soup = fetch_url_soup(url) 
-    soup = get_main_container(soup)
-    strip_uneeded_tags(soup) #no return
+    main_soup = get_main_container(soup)
+    strip_uneeded_tags(main_soup) #no return
+    x = extract_text(main_soup)
+    print(x)
 
 parse_url(url)
