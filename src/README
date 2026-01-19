@@ -1,0 +1,3 @@
+WebPrompt is a lightweight API that turns live web pages into usable AI context. A user sends a request with a URL and a prompt. The system fetches the page, strips away ads, navigation, and HTML noise, and extracts the core readable text. That cleaned content is then injected into the user’s prompt and sent to a large language model, such as AWS Bedrock, to generate a focused response.
+
+The goal is to remove manual copy-paste and make it easy to reason over real web content using AI. WebPrompt is cheap to run, simple in scope, and designed as infrastructure rather than a full product. It works well for summarization, analysis, and writing tasks that depend directly on the content of a webpage.
