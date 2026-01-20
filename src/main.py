@@ -7,7 +7,6 @@ API = FastAPI()
 
 class FetchRequest(BaseModel):
     url : str
-    prompt: str
 
 
 @API.post("/fetch_url_text")
