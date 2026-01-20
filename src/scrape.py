@@ -1,7 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
 
-url = "https://www.britannica.com/topic/Islam" #example
 def fetch_url_soup(url : str) -> BeautifulSoup: #1
     
 
