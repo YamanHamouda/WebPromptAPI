@@ -2,4 +2,6 @@ WebPrompt is a lightweight API that turns live web pages into usable AI context.
 
 The goal is to remove manual copy-paste and make it easy to reason over real web content using AI. WebPrompt is cheap to run, simple in scope, and designed as infrastructure rather than a full product. It works well for summarization, analysis, and writing tasks that depend directly on the content of a webpage.
 
-downloading bs4 library: `pip install beautifulsoup4`
+dependencies:
+beautifulsoup: `pip install beautifulsoup4`
+FastAPI: `pip install fastapi`
