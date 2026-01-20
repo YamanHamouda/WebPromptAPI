@@ -6,3 +6,5 @@ dependencies:
 beautifulsoup: `pip install beautifulsoup4` for web scraping
 FastAPI: `pip install fastapi` for API creation
 uvicorn: `pip install uvicorn` for hosting a fastAPI server
+
+`cd src`; `python -m uvicorn main:API --host 0.0.0.0 --port 8000;` can change to a different host or port
