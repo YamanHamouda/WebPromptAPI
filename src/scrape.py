@@ -34,14 +34,15 @@ def extract_text(container):
     chunks = []
 
     for tag in container.find_all(allowed_tags):
-        text = tag.get_text(" ", strip=True)
+        text = tag.get_text(
+            separator = " ", #places a space in spots where words lose their spaces
+            strip=True #strips away extra whitespace
+            )
 
         #Too short => useless => don't use it.
         if len(text) < 30:
             continue
-
         chunks.append(text)
-
     return "\n".join(chunks)
 
 def parse_url(url):
